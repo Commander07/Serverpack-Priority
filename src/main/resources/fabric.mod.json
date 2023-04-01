@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "serverpackpriority",
+  "version": "${version}",
+
+  "name": "Serverpack Priority",
+  "description": "Lowers serverpack priority to least prioritized.",
+  "authors": [
+    "Commander07"
+  ],
+  "contact": {
+    "homepage": "https://modrinth.com/mod/serverpack-priority",
+    "sources": "https://github.com/Commander07/Severpack-Priority"
+  },
+
+  "license": "MIT",
+  "icon": "assets/serverpackpriority/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "io.github.commander07.serverpackpriority.ServerpackPriority"
+    ]
+  },
+  "mixins": [
+    "serverpackpriority.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.14.17",
+    "fabric-api": "*",
+    "minecraft": "~1.19.3",
+    "java": ">=17"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
