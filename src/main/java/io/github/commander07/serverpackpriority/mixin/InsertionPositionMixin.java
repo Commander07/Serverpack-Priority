@@ -17,7 +17,7 @@ public class InsertionPositionMixin {
     @Inject(method = "insert", at= @At(value = "INVOKE", target = "Ljava/util/List;add(ILjava/lang/Object;)V"), locals = LocalCapture.CAPTURE_FAILHARD, cancellable = true)
     public <T> void insert(List<T> items, T item, Function<T, ResourcePackProfile> profileGetter, boolean listInverted, CallbackInfoReturnable<Integer> cir, ResourcePackProfile.InsertionPosition insertionPosition, int i) {
         ResourcePackProfile rpp = (ResourcePackProfile) item;
-        if ((insertionPosition == ResourcePackProfile.InsertionPosition.BOTTOM) || (rpp.getName().equals("server"))) {
+        if ((insertionPosition == ResourcePackProfile.InsertionPosition.BOTTOM) && (rpp.getName().equals("server"))) {
             ServerpackPriority.LOGGER.info("Found server resource pack changing priority to be just above Minecraft)");
             i += 1;
             items.add(i, item);
