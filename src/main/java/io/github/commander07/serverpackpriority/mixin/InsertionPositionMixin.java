@@ -19,7 +19,7 @@ public class InsertionPositionMixin {
         ResourcePackProfile rpp = (ResourcePackProfile) item;
         if ((insertionPosition == ResourcePackProfile.InsertionPosition.BOTTOM) && (rpp.getName().equals("server"))) {
             ServerpackPriority.LOGGER.info("Found server resource pack changing priority to be just above Minecraft)");
-            i += 1;
+            i += 2;
             items.add(i, item);
             cir.setReturnValue(i);
         }
